@@ -20,7 +20,7 @@ public class DefaultMoneyFormatTest {
     @Test
     public void testFormatting()
             throws Exception {
-        assertEquals("1.25 USD", format.format(new Money(new BigDecimal("1.25"))));
+        assertEquals("1.25 CAD", format.format(new Money(new BigDecimal("1.25"))));
         assertEquals("1.25 JPY", format.format(new Money(new BigDecimal("1.25"),
                 Currency.getInstance("JPY"))));
     }
@@ -31,7 +31,7 @@ public class DefaultMoneyFormatTest {
         assertEquals(new Money(), format.parse(null));
         assertEquals(new Money(), format.parse(""));
         assertEquals(new Money(new BigDecimal("1.25")), format.parse("1.25"));
-        assertEquals(new Money(new BigDecimal("1.25")), format.parse("1.25 USD"));
+        assertEquals(new Money(new BigDecimal("1.25")), format.parse("1.25 CAD"));
         assertEquals(new Money(new BigDecimal("1.25"),
                 Currency.getInstance("JPY")), format.parse("1.25 JPY"));
     }
